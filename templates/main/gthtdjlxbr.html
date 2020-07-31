@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Gthtdjlxbr{% endblock %}
+{% block content %}
+<div class="container">
+
+    <div class="form-row">
+        <div class="form-group col-auto">
+            <textarea id="textArea" class="form-control" cols="50" rows="10" autofocus placeholder="Введите текст">
+            </textarea>
+        </div>
+
+        <div class="form-group col-auto">
+            <input id="but" type="button" class="btn btn-outline-dark" value="Gthtdtcnb">
+        </div>
+
+        <div class="form-group col-auto">
+            <textarea id="textArea1" class="form-control" readonly cols="50" rows="10"></textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    let eng = "`1234567890-=\\qwertyuiop[]asdfghjkl;\'zxcvbnm,./ \n" +
+        "~!@#$%^&*()_+|QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>?";
+    let rus = "ё1234567890-=\\йцукенгшщзхъфывапролджэячсмитьбю. \n" +
+        "Ё!\"№;%:?*()_+/ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,";
+
+    document.getElementById('but').addEventListener('click',function(){
+        let search = document.getElementById('textArea').value;
+        document.getElementById("textArea1").value = "";
+        for (let i = 0 ; i < search.length ; i++){
+            document.getElementById("textArea1").value += rus.charAt(eng.indexOf(search.charAt(i)));
+        }
+        }, false);
+
+</script>
+{% endblock %}
